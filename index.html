@@ -12,18 +12,20 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #f0f4f8;
             color: #1a1a2e;
             line-height: 1.6;
-            scroll-behavior: smooth;
         }
 
         a {
             color: #4a6cf7;
             text-decoration: none;
-            transition: color 0.3s;
         }
 
         a:hover {
@@ -37,13 +39,42 @@
             padding: 20px;
         }
 
+        /* ===== STICKY NAVIGATION ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #16213e;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+            border-bottom: 3px solid #e94560;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            color: #fff;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: background 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            background: #e94560;
+            text-decoration: none;
+        }
+
         /* ===== HEADER ===== */
         header {
             background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
             color: #fff;
-            padding: 40px 20px;
-            border-radius: 16px 16px 0 0;
+            padding: 50px 20px 40px;
             text-align: center;
+            border-radius: 16px 16px 0 0;
         }
 
         header h1 {
@@ -66,31 +97,6 @@
             font-size: 0.9rem;
             font-weight: 600;
             margin-top: 12px;
-        }
-
-        /* ===== NAVIGATION ===== */
-        nav {
-            background: #16213e;
-            padding: 14px 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px 18px;
-            border-bottom: 3px solid #e94560;
-        }
-
-        nav a {
-            color: #fff;
-            font-weight: 500;
-            padding: 6px 12px;
-            border-radius: 8px;
-            transition: background 0.3s;
-            font-size: 0.95rem;
-        }
-
-        nav a:hover {
-            background: #e94560;
-            text-decoration: none;
         }
 
         /* ===== SECTIONS ===== */
@@ -170,7 +176,26 @@
             display: inline-block;
         }
 
-        /* ===== LAB & PROJECT CARDS ===== */
+        /* ===== VIDEO EMBED ===== */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ===== CARDS ===== */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -192,7 +217,7 @@
         .card h3 {
             font-size: 1.1rem;
             color: #0f3460;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .card .meta {
@@ -201,11 +226,21 @@
             margin-bottom: 8px;
         }
 
+        .card .problem-statement {
+            font-size: 0.9rem;
+            color: #2d3a4a;
+            margin: 8px 0;
+            padding: 8px 12px;
+            background: #eef2f7;
+            border-radius: 6px;
+        }
+
         .card .links {
             display: flex;
             flex-wrap: wrap;
             gap: 8px 14px;
             font-size: 0.9rem;
+            margin-top: 8px;
         }
 
         .card .links a {
@@ -214,33 +249,27 @@
             gap: 4px;
         }
 
+        .btn-github {
+            display: inline-block;
+            background: #0f3460;
+            color: #fff !important;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .btn-github:hover {
+            background: #e94560;
+            text-decoration: none !important;
+        }
+
         .card .reflection {
             font-size: 0.95rem;
             color: #2d3a4a;
-            margin-top: 8px;
-            padding-top: 8px;
+            margin-top: 10px;
+            padding-top: 10px;
             border-top: 1px solid #e8edf5;
-        }
-
-        /* ===== IMAGE STYLING ===== */
-        .screenshot-img {
-            width: 100%;
-            max-width: 250px;
-            border-radius: 8px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .screenshot-img:hover {
-            transform: scale(1.02);
-        }
-
-        .img-caption {
-            font-size: 0.85rem;
-            color: #6b7a8f;
-            margin-bottom: 8px;
         }
 
         /* ===== SKILLS ===== */
@@ -310,6 +339,7 @@
 
             nav {
                 gap: 4px 10px;
+                padding: 10px 12px;
             }
 
             nav a {
@@ -320,14 +350,20 @@
             .card-grid {
                 grid-template-columns: 1fr;
             }
-
-            .screenshot-img {
-                max-width: 100%;
-            }
         }
     </style>
 </head>
 <body>
+
+    <!-- ===== STICKY NAVIGATION ===== -->
+    <nav>
+        <a href="#profile">👤 Profile</a>
+        <a href="#labs">🧪 Labs</a>
+        <a href="#projects">📱 Projects</a>
+        <a href="#reflection">💭 Reflection</a>
+        <a href="#skills">⚡ Skills</a>
+        <a href="#resources">📚 Resources</a>
+    </nav>
 
     <div class="container">
 
@@ -338,16 +374,6 @@
             <p class="subtitle">Nurul Izyani · A210813</p>
             <span class="badge">🎯 SDG 1: No Poverty</span>
         </header>
-
-        <!-- ===== NAVIGATION ===== -->
-        <nav>
-            <a href="#profile">👤 Profile</a>
-            <a href="#labs">🧪 Labs</a>
-            <a href="#projects">📱 Projects</a>
-            <a href="#reflection">💭 Reflection</a>
-            <a href="#skills">⚡ Skills</a>
-            <a href="#resources">📚 Resources</a>
-        </nav>
 
         <!-- ===== PROFILE ===== -->
         <section id="profile" class="section">
@@ -379,16 +405,11 @@
                 <div class="card">
                     <h3>📐 Lab 1: UI</h3>
                     <div class="meta">Jetpack Compose · Basic UI</div>
-
-                    <!-- TAMBAH GAMBAR DI SINI -->
-                    <a href="lab1_screenshot.png" target="_blank">
-                        <img src="lab1_screenshot.png" alt="Lab 1 Screenshot" class="screenshot-img" />
-                    </a>
-                    <p class="img-caption">📱 Click the image to view full size</p>
-
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/vrXNpH4lpjY" allowfullscreen></iframe>
+                    </div>
                     <div class="links">
-                        <a href="lab1_screenshot.png" target="_blank">📸 Screenshot</a>
-                        <a href="https://youtu.be/vrXNpH4lpjY" target="_blank">▶️ YouTube</a>
+                        <a href="https://youtu.be/vrXNpH4lpjY" target="_blank">▶️ Watch on YouTube</a>
                     </div>
                     <div class="reflection">
                         <strong>Reflection:</strong> Learned the basics of Jetpack Compose and building simple UI components.
@@ -399,16 +420,11 @@
                 <div class="card">
                     <h3>🖱️ Lab 2: Interaction</h3>
                     <div class="meta">State Management · Click Events</div>
-
-                    <!-- TAMBAH GAMBAR DI SINI -->
-                    <a href="lab2_screenshot.png" target="_blank">
-                        <img src="lab2_screenshot.png" alt="Lab 2 Screenshot" class="screenshot-img" />
-                    </a>
-                    <p class="img-caption">📱 Click the image to view full size</p>
-
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/fhiKd4dL8-M" allowfullscreen></iframe>
+                    </div>
                     <div class="links">
-                        <a href="lab2_screenshot.png" target="_blank">📸 Screenshot</a>
-                        <a href="https://youtu.be/fhiKd4dL8-M" target="_blank">▶️ YouTube</a>
+                        <a href="https://youtu.be/fhiKd4dL8-M" target="_blank">▶️ Watch on YouTube</a>
                     </div>
                     <div class="reflection">
                         <strong>Reflection:</strong> Understood how to manage state and handle user interactions in Compose.
@@ -419,16 +435,11 @@
                 <div class="card">
                     <h3>🎨 Lab 3: Material Design</h3>
                     <div class="meta">Material 3 · Theming · Components</div>
-
-                    <!-- TAMBAH GAMBAR DI SINI -->
-                    <a href="lab3_screenshot.png" target="_blank">
-                        <img src="lab3_screenshot.png" alt="Lab 3 Screenshot" class="screenshot-img" />
-                    </a>
-                    <p class="img-caption">📱 Click the image to view full size</p>
-
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/YrZmXZqN9ec" allowfullscreen></iframe>
+                    </div>
                     <div class="links">
-                        <a href="lab3_screenshot.png" target="_blank">📸 Screenshot</a>
-                        <a href="https://youtu.be/YrZmXZqN9ec" target="_blank">▶️ YouTube</a>
+                        <a href="https://youtu.be/YrZmXZqN9ec" target="_blank">▶️ Watch on YouTube</a>
                     </div>
                     <div class="reflection">
                         <strong>Reflection:</strong> Explored Material Design components and custom theming.
@@ -439,16 +450,11 @@
                 <div class="card">
                     <h3>🧭 Lab 4: Navigation</h3>
                     <div class="meta">Jetpack Navigation · Multi-screen</div>
-
-                    <!-- TAMBAH GAMBAR DI SINI -->
-                    <a href="lab4_screenshot.png" target="_blank">
-                        <img src="lab4_screenshot.png" alt="Lab 4 Screenshot" class="screenshot-img" />
-                    </a>
-                    <p class="img-caption">📱 Click the image to view full size</p>
-
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/W3ti84qQkZM" allowfullscreen></iframe>
+                    </div>
                     <div class="links">
-                        <a href="lab4_screenshot.png" target="_blank">📸 Screenshot</a>
-                        <a href="https://youtu.be/W3ti84qQkZM" target="_blank">▶️ YouTube</a>
+                        <a href="https://youtu.be/W3ti84qQkZM" target="_blank">▶️ Watch on YouTube</a>
                     </div>
                     <div class="reflection">
                         <strong>Reflection:</strong> Implemented navigation between screens using Jetpack Navigation Compose.
@@ -459,16 +465,11 @@
                 <div class="card">
                     <h3>💾 Lab 5: Room Database</h3>
                     <div class="meta">Room · Local Persistence</div>
-
-                    <!-- TAMBAH GAMBAR DI SINI -->
-                    <a href="lab5_screenshot.png" target="_blank">
-                        <img src="lab5_screenshot.png" alt="Lab 5 Screenshot" class="screenshot-img" />
-                    </a>
-                    <p class="img-caption">📱 Click the image to view full size</p>
-
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/" allowfullscreen></iframe>
+                    </div>
                     <div class="links">
-                        <a href="lab5_screenshot.png" target="_blank">📸 Screenshot</a>
-                        <a href="#">▶️ YouTube</a>
+                        <a href="#" target="_blank">▶️ Watch on YouTube</a>
                     </div>
                     <div class="reflection">
                         <strong>Reflection:</strong> Learned how to store data locally using Room Database with Flow.
@@ -487,17 +488,15 @@
                 <div class="card" style="border-left-color: #e94560;">
                     <h3>📱 Project 1: JobQuest</h3>
                     <div class="meta">5 Screens · ViewModel · Navigation</div>
-
-                    <!-- TAMBAH GAMBAR PROJECT 1 DI SINI -->
-                    <a href="project1_screenshot.png" target="_blank">
-                        <img src="project1_screenshot.png" alt="Project 1 Screenshot" class="screenshot-img" />
-                    </a>
-                    <p class="img-caption">📱 Click the image to view full size</p>
-
+                    <div class="problem-statement">
+                        <strong>Problem Statement:</strong> Job seekers struggle to find and apply for jobs efficiently. This app provides a simple platform to browse and apply for job opportunities.
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/V3Hr41Rf6zI" allowfullscreen></iframe>
+                    </div>
                     <div class="links">
-                        <a href="#">📄 Problem Statement</a>
-                        <a href="https://youtu.be/V3Hr41Rf6zI" target="_blank">▶️ VSR</a>
-                        <a href="https://github.com/a210813/a210813_Izyani_DrRimaniza_Project1-" target="_blank">🔗 GitHub</a>
+                        <a href="https://youtu.be/V3Hr41Rf6zI" target="_blank">▶️ Watch VSR</a>
+                        <a href="https://github.com/a210813/a210813_Izyani_DrRimaniza_Project1-" target="_blank" class="btn-github">🔗 View on GitHub</a>
                     </div>
                     <div class="reflection">
                         <strong>Lessons Learned:</strong> Built a multi-screen app with shared ViewModel state and navigation.
@@ -508,17 +507,15 @@
                 <div class="card" style="border-left-color: #0f3460;">
                     <h3>🚀 Project 2: JobQuest (Advanced)</h3>
                     <div class="meta">9 Screens · API · Firebase · Room · GPS</div>
-
-                    <!-- TAMBAH GAMBAR PROJECT 2 DI SINI -->
-                    <a href="project2_screenshot.png" target="_blank">
-                        <img src="project2_screenshot.png" alt="Project 2 Screenshot" class="screenshot-img" />
-                    </a>
-                    <p class="img-caption">📱 Click the image to view full size</p>
-
+                    <div class="problem-statement">
+                        <strong>Problem Statement:</strong> Job seekers need advanced tools like GPS-based job search, cloud storage for applications, and real-time chat with employers.
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/" allowfullscreen></iframe>
+                    </div>
                     <div class="links">
-                        <a href="#">📄 Problem Statement</a>
-                        <a href="#">▶️ VSR</a>
-                        <a href="https://github.com/a210813/Izyani21-A210813_Izyani_DrRimaniza_Project2" target="_blank">🔗 GitHub</a>
+                        <a href="#" target="_blank">▶️ Watch VSR</a>
+                        <a href="https://github.com/a210813/Izyani21-A210813_Izyani_DrRimaniza_Project2" target="_blank" class="btn-github">🔗 View on GitHub</a>
                     </div>
                     <div class="reflection">
                         <strong>Lessons Learned:</strong> Integrated Room, Firebase Firestore, REST API (Retrofit), and GPS sensor.
@@ -532,7 +529,9 @@
         <section id="reflection" class="section">
             <h2><span class="icon">💭</span> Reflection &amp; Learning Journey</h2>
 
-            <h3 style="color:#0f3460; margin-top:12px;">📈 Growth from Lab 1 to Project 2</h3>
+            <p style="margin-bottom:12px;">
+                <strong>📈 Growth from Lab 1 to Project 2:</strong>
+            </p>
             <p>
                 Starting from Lab 1, I built a strong foundation in Jetpack Compose. Lab 2 taught me state management,
                 Lab 3 introduced Material Design, Lab 4 focused on navigation, and Lab 5 covered Room Database.
@@ -544,7 +543,9 @@
                 I also added chat functionality with Firestore sync and toggle save/unsave features.
             </p>
 
-            <h3 style="color:#0f3460; margin-top:20px;">⚡ Challenges Faced</h3>
+            <p style="margin-top:16px;">
+                <strong>⚡ Challenges Faced:</strong>
+            </p>
             <ul style="padding-left:20px; margin-top:6px;">
                 <li><strong>Firebase Setup:</strong> Configuring `google-services.json` and enabling Firestore.</li>
                 <li><strong>API Integration:</strong> Handling Retrofit calls and mapping data to UI models.</li>
@@ -553,7 +554,9 @@
                 <li><strong>Profile Per Account:</strong> Fixing Room to store profile data by email.</li>
             </ul>
 
-            <h3 style="color:#0f3460; margin-top:20px;">🌍 SDG Impact</h3>
+            <p style="margin-top:16px;">
+                <strong>🌍 SDG Impact:</strong>
+            </p>
             <p>
                 JobQuest supports <strong>SDG 1: No Poverty</strong> by providing a platform
                 for job seekers to find employment opportunities. The app helps connect users with companies,
