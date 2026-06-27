@@ -173,7 +173,7 @@
         /* ===== LAB & PROJECT CARDS ===== */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 18px;
         }
 
@@ -220,6 +220,27 @@
             margin-top: 8px;
             padding-top: 8px;
             border-top: 1px solid #e8edf5;
+        }
+
+        /* ===== IMAGE STYLING ===== */
+        .screenshot-img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .screenshot-img:hover {
+            transform: scale(1.02);
+        }
+
+        .img-caption {
+            font-size: 0.85rem;
+            color: #6b7a8f;
+            margin-bottom: 8px;
         }
 
         /* ===== SKILLS ===== */
@@ -299,6 +320,10 @@
             .card-grid {
                 grid-template-columns: 1fr;
             }
+
+            .screenshot-img {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -350,59 +375,99 @@
             <h2><span class="icon">🧪</span> Lab Submissions</h2>
             <div class="card-grid">
 
+                <!-- ===== LAB 1 ===== -->
                 <div class="card">
                     <h3>📐 Lab 1: UI</h3>
                     <div class="meta">Jetpack Compose · Basic UI</div>
+
+                    <!-- TAMBAH GAMBAR DI SINI -->
+                    <a href="lab1_screenshot.png" target="_blank">
+                        <img src="lab1_screenshot.png" alt="Lab 1 Screenshot" class="screenshot-img" />
+                    </a>
+                    <p class="img-caption">📱 Click the image to view full size</p>
+
                     <div class="links">
-                        <a href="#">📸 Screenshots</a>
-                        <a href="https://youtu.be/vrXNpH4lpjY">▶️ YouTube</a>
+                        <a href="lab1_screenshot.png" target="_blank">📸 Screenshot</a>
+                        <a href="https://youtu.be/vrXNpH4lpjY" target="_blank">▶️ YouTube</a>
                     </div>
                     <div class="reflection">
                         <strong>Reflection:</strong> Learned the basics of Jetpack Compose and building simple UI components.
                     </div>
                 </div>
 
+                <!-- ===== LAB 2 ===== -->
                 <div class="card">
                     <h3>🖱️ Lab 2: Interaction</h3>
                     <div class="meta">State Management · Click Events</div>
+
+                    <!-- TAMBAH GAMBAR DI SINI -->
+                    <a href="lab2_screenshot.png" target="_blank">
+                        <img src="lab2_screenshot.png" alt="Lab 2 Screenshot" class="screenshot-img" />
+                    </a>
+                    <p class="img-caption">📱 Click the image to view full size</p>
+
                     <div class="links">
-                        <a href="#">📸 Screenshots</a>
-                        <a href="https://youtu.be/fhiKd4dL8-M">▶️ YouTube</a>
+                        <a href="lab2_screenshot.png" target="_blank">📸 Screenshot</a>
+                        <a href="https://youtu.be/fhiKd4dL8-M" target="_blank">▶️ YouTube</a>
                     </div>
                     <div class="reflection">
                         <strong>Reflection:</strong> Understood how to manage state and handle user interactions in Compose.
                     </div>
                 </div>
 
+                <!-- ===== LAB 3 ===== -->
                 <div class="card">
                     <h3>🎨 Lab 3: Material Design</h3>
                     <div class="meta">Material 3 · Theming · Components</div>
+
+                    <!-- TAMBAH GAMBAR DI SINI -->
+                    <a href="lab3_screenshot.png" target="_blank">
+                        <img src="lab3_screenshot.png" alt="Lab 3 Screenshot" class="screenshot-img" />
+                    </a>
+                    <p class="img-caption">📱 Click the image to view full size</p>
+
                     <div class="links">
-                        <a href="#">📸 Screenshots</a>
-                        <a href="https://youtu.be/YrZmXZqN9ec">▶️ YouTube</a>
+                        <a href="lab3_screenshot.png" target="_blank">📸 Screenshot</a>
+                        <a href="https://youtu.be/YrZmXZqN9ec" target="_blank">▶️ YouTube</a>
                     </div>
                     <div class="reflection">
                         <strong>Reflection:</strong> Explored Material Design components and custom theming.
                     </div>
                 </div>
 
+                <!-- ===== LAB 4 ===== -->
                 <div class="card">
                     <h3>🧭 Lab 4: Navigation</h3>
                     <div class="meta">Jetpack Navigation · Multi-screen</div>
+
+                    <!-- TAMBAH GAMBAR DI SINI -->
+                    <a href="lab4_screenshot.png" target="_blank">
+                        <img src="lab4_screenshot.png" alt="Lab 4 Screenshot" class="screenshot-img" />
+                    </a>
+                    <p class="img-caption">📱 Click the image to view full size</p>
+
                     <div class="links">
-                        <a href="#">📸 Screenshots</a>
-                        <a href="https://youtu.be/W3ti84qQkZM">▶️ YouTube</a>
+                        <a href="lab4_screenshot.png" target="_blank">📸 Screenshot</a>
+                        <a href="https://youtu.be/W3ti84qQkZM" target="_blank">▶️ YouTube</a>
                     </div>
                     <div class="reflection">
                         <strong>Reflection:</strong> Implemented navigation between screens using Jetpack Navigation Compose.
                     </div>
                 </div>
 
+                <!-- ===== LAB 5 ===== -->
                 <div class="card">
                     <h3>💾 Lab 5: Room Database</h3>
                     <div class="meta">Room · Local Persistence</div>
+
+                    <!-- TAMBAH GAMBAR DI SINI -->
+                    <a href="lab5_screenshot.png" target="_blank">
+                        <img src="lab5_screenshot.png" alt="Lab 5 Screenshot" class="screenshot-img" />
+                    </a>
+                    <p class="img-caption">📱 Click the image to view full size</p>
+
                     <div class="links">
-                        <a href="#">📸 Screenshots</a>
+                        <a href="lab5_screenshot.png" target="_blank">📸 Screenshot</a>
                         <a href="#">▶️ YouTube</a>
                     </div>
                     <div class="reflection">
@@ -418,22 +483,38 @@
             <h2><span class="icon">📱</span> Project Submissions</h2>
             <div class="card-grid">
 
+                <!-- ===== PROJECT 1 ===== -->
                 <div class="card" style="border-left-color: #e94560;">
                     <h3>📱 Project 1: JobQuest</h3>
                     <div class="meta">5 Screens · ViewModel · Navigation</div>
+
+                    <!-- TAMBAH GAMBAR PROJECT 1 DI SINI -->
+                    <a href="project1_screenshot.png" target="_blank">
+                        <img src="project1_screenshot.png" alt="Project 1 Screenshot" class="screenshot-img" />
+                    </a>
+                    <p class="img-caption">📱 Click the image to view full size</p>
+
                     <div class="links">
                         <a href="#">📄 Problem Statement</a>
-                        <a href="https://youtu.be/V3Hr41Rf6zI">▶️ VSR</a>
-                        <a href="https://https://github.com/a210813/a210813_Izyani_DrRimaniza_Project1-" target="_blank">🔗 GitHub</a>
+                        <a href="https://youtu.be/V3Hr41Rf6zI" target="_blank">▶️ VSR</a>
+                        <a href="https://github.com/a210813/a210813_Izyani_DrRimaniza_Project1-" target="_blank">🔗 GitHub</a>
                     </div>
                     <div class="reflection">
                         <strong>Lessons Learned:</strong> Built a multi-screen app with shared ViewModel state and navigation.
                     </div>
                 </div>
 
+                <!-- ===== PROJECT 2 ===== -->
                 <div class="card" style="border-left-color: #0f3460;">
                     <h3>🚀 Project 2: JobQuest (Advanced)</h3>
                     <div class="meta">9 Screens · API · Firebase · Room · GPS</div>
+
+                    <!-- TAMBAH GAMBAR PROJECT 2 DI SINI -->
+                    <a href="project2_screenshot.png" target="_blank">
+                        <img src="project2_screenshot.png" alt="Project 2 Screenshot" class="screenshot-img" />
+                    </a>
+                    <p class="img-caption">📱 Click the image to view full size</p>
+
                     <div class="links">
                         <a href="#">📄 Problem Statement</a>
                         <a href="#">▶️ VSR</a>
