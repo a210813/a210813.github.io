@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e-Portfolio - Nurul Izyani | A210813</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            color: #1a1a2e;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: #4a6cf7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #3b5de7;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #fff;
+            padding: 40px 20px;
+            border-radius: 16px 16px 0 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            margin-top: 8px;
+        }
+
+        header .badge {
+            display: inline-block;
+            background: #e94560;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            background: #16213e;
+            padding: 14px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+            border-bottom: 3px solid #e94560;
+        }
+
+        nav a {
+            color: #fff;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: background 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            background: #e94560;
+            text-decoration: none;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: #0f3460;
+            border-bottom: 3px solid #e94560;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section h2 .icon {
+            font-size: 1.8rem;
+        }
+
+        /* ===== PROFILE ===== */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 24px;
+        }
+
+        .profile-avatar {
+            text-align: center;
+        }
+
+        .profile-avatar .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4a6cf7, #e94560);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 auto 12px;
+            box-shadow: 0 8px 30px rgba(74, 108, 247, 0.3);
+        }
+
+        .profile-avatar .sdg-badge {
+            display: inline-block;
+            background: #0f3460;
+            color: #fff;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .profile-info p {
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .profile-info .label {
+            font-weight: 600;
+            color: #0f3460;
+            width: 120px;
+            display: inline-block;
+        }
+
+        /* ===== LAB & PROJECT CARDS ===== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: #f8faff;
+            border-radius: 12px;
+            padding: 18px 20px;
+            border-left: 4px solid #4a6cf7;
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: #0f3460;
+            margin-bottom: 6px;
+        }
+
+        .card .meta {
+            font-size: 0.85rem;
+            color: #6b7a8f;
+            margin-bottom: 8px;
+        }
+
+        .card .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            font-size: 0.9rem;
+        }
+
+        .card .links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card .reflection {
+            font-size: 0.95rem;
+            color: #2d3a4a;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #e8edf5;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list .skill {
+            background: #e8edf5;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #0f3460;
+            transition: background 0.3s;
+        }
+
+        .skills-list .skill:hover {
+            background: #4a6cf7;
+            color: #fff;
+        }
+
+        /* ===== RESOURCES ===== */
+        .resources-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resources-list li {
+            padding: 6px 0;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        .resources-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a1a2e;
+            color: #aab4c9;
+            text-align: center;
+            padding: 24px;
+            border-radius: 0 0 16px 16px;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: #fff;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 20px 16px;
+            }
+
+            nav {
+                gap: 4px 10px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                padding: 4px 10px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== HEADER ===== -->
+        <header>
+            <h1>📚 e-Portfolio</h1>
+            <p class="subtitle">TK2323/TM2213 Mobile Programming</p>
+            <p class="subtitle">Nurul Izyani · A210813</p>
+            <span class="badge">🎯 SDG 1: No Poverty</span>
+        </header>
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav>
+            <a href="#profile">👤 Profile</a>
+            <a href="#labs">🧪 Labs</a>
+            <a href="#projects">📱 Projects</a>
+            <a href="#reflection">💭 Reflection</a>
+            <a href="#skills">⚡ Skills</a>
+            <a href="#resources">📚 Resources</a>
+        </nav>
+
+        <!-- ===== PROFILE ===== -->
+        <section id="profile" class="section">
+            <h2><span class="icon">👤</span> Student Profile</h2>
+            <div class="profile-grid">
+                <div class="profile-avatar">
+                    <div class="avatar">NI</div>
+                    <span class="sdg-badge">🎯 SDG 1</span>
+                </div>
+                <div class="profile-info">
+                    <p><span class="label">Name:</span> Nurul Izyani</p>
+                    <p><span class="label">Matric No:</span> A210813</p>
+                    <p><span class="label">Programme:</span> Mobile Programming</p>
+                    <p><span class="label">Instructor:</span> Dr. Rimaniza</p>
+                    <p><span class="label">SDG:</span> SDG 1 — No Poverty</p>
+                    <p style="margin-top:12px; font-style:italic; color:#4a6cf7;">
+                        “End poverty in all its forms everywhere. By providing access to employment opportunities, the app helps individuals secure stable income and break the cycle of poverty.”
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LABS ===== -->
+        <section id="labs" class="section">
+            <h2><span class="icon">🧪</span> Lab Submissions</h2>
+            <div class="card-grid">
+
+                <div class="card">
+                    <h3>📐 Lab 1: UI</h3>
+                    <div class="meta">Jetpack Compose · Basic UI</div>
+                    <div class="links">
+                        <a href="#">📸 Screenshots</a>
+                        <a href="#">▶️ YouTube</a>
+                    </div>
+                    <div class="reflection">
+                        <strong>Reflection:</strong> Learned the basics of Jetpack Compose and building simple UI components.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🖱️ Lab 2: Interaction</h3>
+                    <div class="meta">State Management · Click Events</div>
+                    <div class="links">
+                        <a href="#">📸 Screenshots</a>
+                        <a href="#">▶️ YouTube</a>
+                    </div>
+                    <div class="reflection">
+                        <strong>Reflection:</strong> Understood how to manage state and handle user interactions in Compose.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🎨 Lab 3: Material Design</h3>
+                    <div class="meta">Material 3 · Theming · Components</div>
+                    <div class="links">
+                        <a href="#">📸 Screenshots</a>
+                        <a href="#">▶️ YouTube</a>
+                    </div>
+                    <div class="reflection">
+                        <strong>Reflection:</strong> Explored Material Design components and custom theming.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🧭 Lab 4: Navigation</h3>
+                    <div class="meta">Jetpack Navigation · Multi-screen</div>
+                    <div class="links">
+                        <a href="#">📸 Screenshots</a>
+                        <a href="#">▶️ YouTube</a>
+                    </div>
+                    <div class="reflection">
+                        <strong>Reflection:</strong> Implemented navigation between screens using Jetpack Navigation Compose.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>💾 Lab 5: Room Database</h3>
+                    <div class="meta">Room · Local Persistence</div>
+                    <div class="links">
+                        <a href="#">📸 Screenshots</a>
+                        <a href="#">▶️ YouTube</a>
+                    </div>
+                    <div class="reflection">
+                        <strong>Reflection:</strong> Learned how to store data locally using Room Database with Flow.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+        <section id="projects" class="section">
+            <h2><span class="icon">📱</span> Project Submissions</h2>
+            <div class="card-grid">
+
+                <div class="card" style="border-left-color: #e94560;">
+                    <h3>📱 Project 1: JobQuest</h3>
+                    <div class="meta">5 Screens · ViewModel · Navigation</div>
+                    <div class="links">
+                        <a href="#">📄 Problem Statement</a>
+                        <a href="#">▶️ VSR</a>
+                        <a href="https://github.com/a210813/a210813_Izyani_DrRimaniza_Project2" target="_blank">🔗 GitHub</a>
+                    </div>
+                    <div class="reflection">
+                        <strong>Lessons Learned:</strong> Built a multi-screen app with shared ViewModel state and navigation.
+                    </div>
+                </div>
+
+                <div class="card" style="border-left-color: #0f3460;">
+                    <h3>🚀 Project 2: JobQuest (Advanced)</h3>
+                    <div class="meta">9 Screens · API · Firebase · Room · GPS</div>
+                    <div class="links">
+                        <a href="#">📄 Problem Statement</a>
+                        <a href="#">▶️ VSR</a>
+                        <a href="https://github.com/a210813/a210813_Izyani_DrRimaniza_Project2" target="_blank">🔗 GitHub</a>
+                    </div>
+                    <div class="reflection">
+                        <strong>Lessons Learned:</strong> Integrated Room, Firebase Firestore, REST API (Retrofit), and GPS sensor.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== REFLECTION ===== -->
+        <section id="reflection" class="section">
+            <h2><span class="icon">💭</span> Reflection &amp; Learning Journey</h2>
+
+            <h3 style="color:#0f3460; margin-top:12px;">📈 Growth from Lab 1 to Project 2</h3>
+            <p>
+                Starting from Lab 1, I built a strong foundation in Jetpack Compose. Lab 2 taught me state management,
+                Lab 3 introduced Material Design, Lab 4 focused on navigation, and Lab 5 covered Room Database.
+                Project 1 brought everything together into a multi-screen app.
+            </p>
+            <p style="margin-top:8px;">
+                For Project 2, I expanded my skills with advanced features: integrating Firebase Firestore for cloud storage,
+                Retrofit for REST API calls (JobStreet via Apify), and GPS/Location sensors for "Jobs Near You".
+                I also added chat functionality with Firestore sync and toggle save/unsave features.
+            </p>
+
+            <h3 style="color:#0f3460; margin-top:20px;">⚡ Challenges Faced</h3>
+            <ul style="padding-left:20px; margin-top:6px;">
+                <li><strong>Firebase Setup:</strong> Configuring `google-services.json` and enabling Firestore.</li>
+                <li><strong>API Integration:</strong> Handling Retrofit calls and mapping data to UI models.</li>
+                <li><strong>GPS Sensor:</strong> Permission handling and getting current location on emulator.</li>
+                <li><strong>Chat Sync:</strong> Saving and retrieving messages from Firestore.</li>
+                <li><strong>Profile Per Account:</strong> Fixing Room to store profile data by email.</li>
+            </ul>
+
+            <h3 style="color:#0f3460; margin-top:20px;">🌍 SDG Impact</h3>
+            <p>
+                JobQuest supports <strong>SDG 1: No Poverty</strong> by providing a platform
+                for job seekers to find employment opportunities. The app helps connect users with companies,
+                streamlining the job application process and reducing barriers to employment.
+                By helping individuals secure stable income, the app contributes to breaking the cycle of poverty.
+            </p>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+        <section id="skills" class="section">
+            <h2><span class="icon">⚡</span> Skills &amp; Tech Stack</h2>
+            <div class="skills-list">
+                <span class="skill">Kotlin</span>
+                <span class="skill">Jetpack Compose</span>
+                <span class="skill">Android Studio</span>
+                <span class="skill">Room Database</span>
+                <span class="skill">Firebase Firestore</span>
+                <span class="skill">Retrofit</span>
+                <span class="skill">REST API</span>
+                <span class="skill">Coroutines</span>
+                <span class="skill">Flow</span>
+                <span class="skill">GPS/Location</span>
+                <span class="skill">Navigation Compose</span>
+                <span class="skill">Material 3</span>
+                <span class="skill">Git/GitHub</span>
+                <span class="skill">Coil (Image Loading)</span>
+            </div>
+        </section>
+
+        <!-- ===== RESOURCES ===== -->
+        <section id="resources" class="section">
+            <h2><span class="icon">📚</span> Resources &amp; References</h2>
+            <ul class="resources-list">
+                <li><strong>Firebase:</strong> <a href="https://firebase.google.com/docs/firestore" target="_blank">Firestore Documentation</a></li>
+                <li><strong>Retrofit:</strong> <a href="https://square.github.io/retrofit/" target="_blank">Square Retrofit</a></li>
+                <li><strong>Room:</strong> <a href="https://developer.android.com/training/data-storage/room" target="_blank">Android Room Documentation</a></li>
+                <li><strong>GPS/Location:</strong> <a href="https://developer.android.com/training/location" target="_blank">Android Location APIs</a></li>
+                <li><strong>Apify API:</strong> <a href="https://apify.com/" target="_blank">Apify Platform</a></li>
+                <li><strong>JobStreet:</strong> <a href="https://www.jobstreet.com.my/" target="_blank">JobStreet Malaysia</a></li>
+                <li><strong>Coil:</strong> <a href="https://coil-kt.github.io/coil/" target="_blank">Coil Image Loading</a></li>
+                <li style="margin-top:8px; padding-top:8px; border-top:1px solid #eef2f7;">
+                    <strong>🤖 AI Assistance:</strong> Used ChatGPT/Gemini for code debugging, refactoring, and understanding complex topics like Firebase, Retrofit, and Room.
+                </li>
+            </ul>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p>
+                <strong>Nurul Izyani</strong> · A210813 · Mobile Programming (TK2323/TM2213)
+            </p>
+            <p style="margin-top:4px;">
+                📧 <a href="mailto:izyani@example.com" style="color:#aab4c9;">izyani@example.com</a> &nbsp;|&nbsp;
+                🔗 <a href="https://github.com/a210813" target="_blank" style="color:#aab4c9;">github.com/a210813</a>
+            </p>
+            <p style="margin-top:6px; font-size:0.8rem; opacity:0.7;">
+                © 2026 · Built with ❤️ for Project 2 · Hosted on GitHub Pages
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
