@@ -8,7 +8,8 @@ This is my e-Portfolio for TK2323/TM2213 Mobile Programming course.
 **SDG 1: No Poverty**
 
 ## 📱 My Projects
-- **[Project 2: JobQuest](https://github.com/a210813/a210813_Izyani_DrRimaniza_Project2)**
+- **[Project 1: JobQuest](https://github.com/a210813/a210813_Izyani_DrRimaniza_Project1)**
+- **[Project 2: JobQuest (Advanced)](https://github.com/a210813/a210813_Izyani_DrRimaniza_Project2)**
 
 ## 🧪 Labs
 - Lab 1: UI
