@@ -152,6 +152,13 @@
             color: #fff;
             margin: 0 auto 12px;
             box-shadow: 0 8px 30px rgba(74, 108, 247, 0.3);
+            overflow: hidden;
+        }
+
+        .profile-avatar .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .profile-avatar .sdg-badge {
@@ -162,6 +169,13 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
+        }
+
+        .profile-avatar .upload-hint {
+            display: block;
+            font-size: 0.7rem;
+            color: #888;
+            margin-top: 4px;
         }
 
         .profile-info p {
@@ -396,8 +410,16 @@
             <h2><span class="icon">👤</span> Student Profile</h2>
             <div class="profile-grid">
                 <div class="profile-avatar">
-                    <div class="avatar">NI</div>
+                    <!-- ============================================================ -->
+                    <!-- 📸 RUANG UNTUK GAMBAR PROFIL:                                  -->
+                    <!-- Gantikan 'profile.jpg' dengan nama fail gambar anda.          -->
+                    <!-- Letakkan fail gambar dalam folder yang sama dengan index.html -->
+                    <!-- ============================================================ -->
+                    <div class="avatar">
+                        <img src="profile.jpg" alt="Profile Photo - Nurul Izyani" />
+                    </div>
                     <span class="sdg-badge">🎯 SDG 1</span>
+                    <span class="upload-hint">📸 Gantikan profile.jpg dengan gambar anda</span>
                 </div>
                 <div class="profile-info">
                     <p><span class="label">Name:</span> Nurul Izyani</p>
@@ -421,6 +443,10 @@
                 <div class="card">
                     <h3>📐 Lab 1: UI</h3>
                     <div class="meta">Jetpack Compose · Basic UI</div>
+                    <!-- ============================================================ -->
+                    <!-- 📸 RUANG UNTUK GAMBAR LAB 1:                                 -->
+                    <!-- Gantikan 'lab1.png' dengan nama fail gambar anda.            -->
+                    <!-- ============================================================ -->
                     <img src="lab1.png" alt="Lab 1 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/vrXNpH4lpjY" allowfullscreen></iframe>
@@ -429,7 +455,7 @@
                         <a href="https://youtu.be/vrXNpH4lpjY" target="_blank">▶️ Watch on YouTube</a>
                     </div>
                     <div class="reflection">
-                        <strong>Reflection:</strong> Learned the basics of Jetpack Compose and building simple UI components.
+                        <strong>Reflection:</strong> I learned the basics of Jetpack Compose and how to build simple UI components using Composable functions. This lab gave me a solid foundation for the rest of the course.
                     </div>
                 </div>
 
@@ -437,6 +463,10 @@
                 <div class="card">
                     <h3>🖱️ Lab 2: Interaction</h3>
                     <div class="meta">State Management · Click Events</div>
+                    <!-- ============================================================ -->
+                    <!-- 📸 RUANG UNTUK GAMBAR LAB 2:                                 -->
+                    <!-- Gantikan 'lab2.png' dengan nama fail gambar anda.            -->
+                    <!-- ============================================================ -->
                     <img src="lab2.png" alt="Lab 2 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/fhiKd4dL8-M" allowfullscreen></iframe>
@@ -445,7 +475,7 @@
                         <a href="https://youtu.be/fhiKd4dL8-M" target="_blank">▶️ Watch on YouTube</a>
                     </div>
                     <div class="reflection">
-                        <strong>Reflection:</strong> Understood how to manage state and handle user interactions in Compose.
+                        <strong>Reflection:</strong> I learned how to manage state using mutableStateOf and handle user interactions like button clicks. Understanding recomposition was key to building interactive UIs.
                     </div>
                 </div>
 
@@ -453,6 +483,10 @@
                 <div class="card">
                     <h3>🎨 Lab 3: Material Design</h3>
                     <div class="meta">Material 3 · Theming · Components</div>
+                    <!-- ============================================================ -->
+                    <!-- 📸 RUANG UNTUK GAMBAR LAB 3:                                 -->
+                    <!-- Gantikan 'lab3.png' dengan nama fail gambar anda.            -->
+                    <!-- ============================================================ -->
                     <img src="lab3.png" alt="Lab 3 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/YrZmXZqN9ec" allowfullscreen></iframe>
@@ -461,7 +495,7 @@
                         <a href="https://youtu.be/YrZmXZqN9ec" target="_blank">▶️ Watch on YouTube</a>
                     </div>
                     <div class="reflection">
-                        <strong>Reflection:</strong> Explored Material Design components and custom theming.
+                        <strong>Reflection:</strong> I explored Material Design 3 components and learned how to customize themes with colors, typography, and shapes. I also implemented light and dark mode support.
                     </div>
                 </div>
 
@@ -469,6 +503,10 @@
                 <div class="card">
                     <h3>🧭 Lab 4: Navigation</h3>
                     <div class="meta">Jetpack Navigation · Multi-screen</div>
+                    <!-- ============================================================ -->
+                    <!-- 📸 RUANG UNTUK GAMBAR LAB 4:                                 -->
+                    <!-- Gantikan 'lab4.png' dengan nama fail gambar anda.            -->
+                    <!-- ============================================================ -->
                     <img src="lab4.png" alt="Lab 4 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/W3ti84qQkZM" allowfullscreen></iframe>
@@ -477,7 +515,7 @@
                         <a href="https://youtu.be/W3ti84qQkZM" target="_blank">▶️ Watch on YouTube</a>
                     </div>
                     <div class="reflection">
-                        <strong>Reflection:</strong> Implemented navigation between screens using Jetpack Navigation Compose.
+                        <strong>Reflection:</strong> I implemented navigation between multiple screens using NavHost and NavController. I also learned how to pass arguments between destinations.
                     </div>
                 </div>
 
@@ -485,15 +523,19 @@
                 <div class="card">
                     <h3>💾 Lab 5: Room Database</h3>
                     <div class="meta">Room · Local Persistence</div>
+                    <!-- ============================================================ -->
+                    <!-- 📸 RUANG UNTUK GAMBAR LAB 5:                                 -->
+                    <!-- Gantikan 'lab5.png' dengan nama fail gambar anda.            -->
+                    <!-- ============================================================ -->
                     <img src="lab5.png" alt="Lab 5 Screenshot" class="screenshot-img" />
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/lWnAd2mFZ90" allowfullscreen></iframe>
                     </div>
                     <div class="links">
                         <a href="https://youtu.be/lWnAd2mFZ90" target="_blank">▶️ Watch on YouTube</a>
                     </div>
                     <div class="reflection">
-                        <strong>Reflection:</strong> Learned how to store data locally using Room Database with Flow.
+                        <strong>Reflection:</strong> I learned how to implement local persistence using Room Database with Entity, DAO, and Database classes. I also used Flow to observe data changes.
                     </div>
                 </div>
 
@@ -512,6 +554,10 @@
                     <div class="problem-statement">
                         <strong>Problem Statement:</strong> Job seekers struggle to find and apply for jobs efficiently. This app provides a simple platform to browse and apply for job opportunities.
                     </div>
+                    <!-- ============================================================ -->
+                    <!-- 📸 RUANG UNTUK GAMBAR PROJECT 1:                             -->
+                    <!-- Gantikan 'project1.png' dengan nama fail gambar anda.        -->
+                    <!-- ============================================================ -->
                     <img src="project1.png" alt="Project 1 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/V3Hr41Rf6zI" allowfullscreen></iframe>
@@ -521,7 +567,7 @@
                         <a href="https://github.com/a210813/a210813_Izyani_DrRimaniza_Project1-" target="_blank" class="btn-github">🔗 View on GitHub</a>
                     </div>
                     <div class="reflection">
-                        <strong>Lessons Learned:</strong> Built a multi-screen app with shared ViewModel state and navigation.
+                        <strong>Lessons Learned:</strong> I built a complete multi-screen app with Jetpack Compose, Material Design, and Navigation. Using ViewModel with SharedViewModel helped me manage state across screens effectively.
                     </div>
                 </div>
 
@@ -532,16 +578,20 @@
                     <div class="problem-statement">
                         <strong>Problem Statement:</strong> Job seekers need advanced tools like GPS-based job search, cloud storage for applications, and real-time chat with employers.
                     </div>
+                    <!-- ============================================================ -->
+                    <!-- 📸 RUANG UNTUK GAMBAR PROJECT 2:                             -->
+                    <!-- Gantikan 'project2.png' dengan nama fail gambar anda.        -->
+                    <!-- ============================================================ -->
                     <img src="project2.png" alt="Project 2 Screenshot" class="screenshot-img" />
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/YJrgvtq2teo" allowfullscreen></iframe>
                     </div>
                     <div class="links">
                         <a href="https://youtu.be/YJrgvtq2teo" target="_blank">▶️ Watch VSR</a>
                         <a href="https://github.com/a210813/Izyani21-A210813_Izyani_DrRimaniza_Project2" target="_blank" class="btn-github">🔗 View on GitHub</a>
                     </div>
                     <div class="reflection">
-                        <strong>Lessons Learned:</strong> Integrated Room, Firebase Firestore, REST API (Retrofit), and GPS sensor.
+                        <strong>Lessons Learned:</strong> I integrated Firebase Firestore, Retrofit (REST API), GPS/Location, and Room Database. The biggest challenge was handling real-time chat sync and permission management for GPS.
                     </div>
                 </div>
 
@@ -551,40 +601,11 @@
         <!-- ===== REFLECTION ===== -->
         <section id="reflection" class="section">
             <h2><span class="icon">💭</span> Reflection &amp; Learning Journey</h2>
-
-            <p style="margin-bottom:12px;">
-                <strong>📈 Growth from Lab 1 to Project 2:</strong>
-            </p>
             <p>
-                Starting from Lab 1, I built a strong foundation in Jetpack Compose. Lab 2 taught me state management,
-                Lab 3 introduced Material Design, Lab 4 focused on navigation, and Lab 5 covered Room Database.
-                Project 1 brought everything together into a multi-screen app.
+                Starting from Lab 1, I built a strong foundation in Jetpack Compose. Lab 2 taught me state management, Lab 3 introduced Material Design, Lab 4 focused on navigation, and Lab 5 covered Room Database. Project 1 brought everything together into a multi-screen app, while Project 2 expanded my skills with Firebase, Retrofit, GPS, and real-time chat features.
             </p>
-            <p style="margin-top:8px;">
-                For Project 2, I expanded my skills with advanced features: integrating Firebase Firestore for cloud storage,
-                Retrofit for REST API calls (JobStreet via Apify), and GPS/Location sensors for "Jobs Near You".
-                I also added chat functionality with Firestore sync and toggle save/unsave features.
-            </p>
-
-            <p style="margin-top:16px;">
-                <strong>⚡ Challenges Faced:</strong>
-            </p>
-            <ul style="padding-left:20px; margin-top:6px;">
-                <li><strong>Firebase Setup:</strong> Configuring `google-services.json` and enabling Firestore.</li>
-                <li><strong>API Integration:</strong> Handling Retrofit calls and mapping data to UI models.</li>
-                <li><strong>GPS Sensor:</strong> Permission handling and getting current location on emulator.</li>
-                <li><strong>Chat Sync:</strong> Saving and retrieving messages from Firestore.</li>
-                <li><strong>Profile Per Account:</strong> Fixing Room to store profile data by email.</li>
-            </ul>
-
-            <p style="margin-top:16px;">
-                <strong>🌍 SDG Impact:</strong>
-            </p>
-            <p>
-                JobQuest supports <strong>SDG 1: No Poverty</strong> by providing a platform
-                for job seekers to find employment opportunities. The app helps connect users with companies,
-                streamlining the job application process and reducing barriers to employment.
-                By helping individuals secure stable income, the app contributes to breaking the cycle of poverty.
+            <p style="margin-top:12px;">
+                JobQuest supports <strong>SDG 1: No Poverty</strong> by providing a platform for job seekers to find employment opportunities. By helping individuals secure stable income, the app contributes to breaking the cycle of poverty.
             </p>
         </section>
 
