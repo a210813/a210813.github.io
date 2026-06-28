@@ -17,15 +17,16 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f4f8;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f5f7fb;
             color: #1a1a2e;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         a {
-            color: #4a6cf7;
+            color: #4f7df3;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         a:hover {
@@ -34,7 +35,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -44,95 +45,141 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: #16213e;
-            padding: 14px 20px;
+            background: rgba(22, 33, 62, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 14px 24px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 8px 18px;
-            border-bottom: 3px solid #e94560;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            gap: 6px 20px;
+            border-bottom: 2px solid rgba(233, 69, 96, 0.5);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
         }
 
         nav a {
-            color: #fff;
+            color: rgba(255, 255, 255, 0.85);
             font-weight: 500;
-            padding: 6px 12px;
-            border-radius: 8px;
-            transition: background 0.3s;
-            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 30px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
         }
 
         nav a:hover {
             background: #e94560;
+            color: #fff;
             text-decoration: none;
+            transform: translateY(-1px);
         }
 
         /* ===== HEADER ===== */
         header {
-            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            background: linear-gradient(145deg, #0f1b33, #1a2a4a, #0f3460);
             color: #fff;
-            padding: 50px 20px 40px;
+            padding: 60px 30px 50px;
             text-align: center;
-            border-radius: 16px 16px 0 0;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.15), transparent 70%);
+            border-radius: 50%;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(79, 125, 243, 0.12), transparent 70%);
+            border-radius: 50%;
+        }
+
+        header * {
+            position: relative;
+            z-index: 1;
         }
 
         header h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff, #a8c0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         header .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.85;
+            font-size: 1.25rem;
+            opacity: 0.8;
             margin-top: 8px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
         header .badge {
             display: inline-block;
-            background: #e94560;
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 0.9rem;
+            background: linear-gradient(135deg, #e94560, #c23152);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
             font-weight: 600;
-            margin-top: 12px;
+            margin-top: 14px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.35);
         }
 
         /* ===== SECTIONS ===== */
         .section {
-            background: #fff;
-            border-radius: 12px;
-            padding: 28px 32px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px 36px;
             margin-bottom: 28px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            transition: transform 0.2s;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
         .section:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
         }
 
         .section h2 {
-            font-size: 1.8rem;
-            color: #0f3460;
+            font-size: 1.7rem;
+            color: #0f1b33;
             border-bottom: 3px solid #e94560;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             gap: 12px;
+            font-weight: 600;
         }
 
         .section h2 .icon {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
         }
 
         /* ===== PROFILE ===== */
         .profile-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 24px;
+            grid-template-columns: 160px 1fr;
+            gap: 30px;
+            align-items: start;
         }
 
         .profile-avatar {
@@ -143,7 +190,7 @@
             width: 140px;
             height: 140px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #4a6cf7, #e94560);
+            background: linear-gradient(135deg, #4f7df3, #e94560);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -151,8 +198,14 @@
             font-weight: 700;
             color: #fff;
             margin: 0 auto 12px;
-            box-shadow: 0 8px 30px rgba(74, 108, 247, 0.3);
+            box-shadow: 0 8px 30px rgba(79, 125, 243, 0.3);
             overflow: hidden;
+            border: 4px solid #fff;
+            transition: transform 0.3s;
+        }
+
+        .profile-avatar .avatar:hover {
+            transform: scale(1.02);
         }
 
         .profile-avatar .avatar img {
@@ -163,19 +216,13 @@
 
         .profile-avatar .sdg-badge {
             display: inline-block;
-            background: #0f3460;
+            background: #0f1b33;
             color: #fff;
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
             font-weight: 600;
-        }
-
-        .profile-avatar .upload-hint {
-            display: block;
-            font-size: 0.7rem;
-            color: #888;
-            margin-top: 4px;
+            letter-spacing: 0.3px;
         }
 
         .profile-info p {
@@ -185,9 +232,26 @@
 
         .profile-info .label {
             font-weight: 600;
-            color: #0f3460;
+            color: #0f1b33;
             width: 120px;
             display: inline-block;
+            opacity: 0.75;
+        }
+
+        .profile-info .highlight {
+            color: #0f1b33;
+            font-weight: 500;
+        }
+
+        .profile-info .sdg-quote {
+            margin-top: 14px;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, #f0f4ff, #faf0f3);
+            border-radius: 12px;
+            border-left: 4px solid #e94560;
+            font-style: italic;
+            color: #2d3a4a;
+            font-size: 0.95rem;
         }
 
         /* ===== VIDEO EMBED ===== */
@@ -196,8 +260,9 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 8px;
+            border-radius: 12px;
             margin: 12px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
         .video-container iframe {
@@ -212,57 +277,66 @@
         /* ===== SCREENSHOT IMAGE ===== */
         .screenshot-img {
             width: 100%;
-            max-height: 200px;
+            max-height: 180px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 10px;
             margin: 10px 0;
-            border: 1px solid #ddd;
+            border: 1px solid #eef2f7;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
 
         .screenshot-img:hover {
-            transform: scale(1.01);
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         /* ===== CARDS ===== */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 22px;
         }
 
         .card {
-            background: #f8faff;
-            border-radius: 12px;
-            padding: 18px 20px;
-            border-left: 4px solid #4a6cf7;
-            transition: box-shadow 0.3s;
+            background: #fafbff;
+            border-radius: 14px;
+            padding: 22px 24px;
+            border-left: 5px solid #4f7df3;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.04);
         }
 
         .card:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
         }
 
         .card h3 {
-            font-size: 1.1rem;
-            color: #0f3460;
-            margin-bottom: 4px;
+            font-size: 1.15rem;
+            color: #0f1b33;
+            margin-bottom: 2px;
         }
 
         .card .meta {
-            font-size: 0.85rem;
-            color: #6b7a8f;
+            font-size: 0.8rem;
+            color: #7a8aa0;
             margin-bottom: 8px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
         }
 
         .card .problem-statement {
             font-size: 0.9rem;
             color: #2d3a4a;
-            margin: 8px 0;
-            padding: 8px 12px;
-            background: #eef2f7;
-            border-radius: 6px;
+            margin: 8px 0 12px;
+            padding: 10px 14px;
+            background: #f0f4ff;
+            border-radius: 8px;
+            border-left: 3px solid #4f7df3;
         }
 
         .card .links {
@@ -277,29 +351,51 @@
             display: inline-flex;
             align-items: center;
             gap: 4px;
+            font-weight: 500;
         }
 
         .btn-github {
             display: inline-block;
-            background: #0f3460;
+            background: #0f1b33;
             color: #fff !important;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            transition: background 0.3s;
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            letter-spacing: 0.3px;
         }
 
         .btn-github:hover {
             background: #e94560;
             text-decoration: none !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
         }
 
         .card .reflection {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: #2d3a4a;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid #e8edf5;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #eef2f7;
+        }
+
+        .card .reflection strong {
+            color: #0f1b33;
+        }
+
+        /* ===== TAG / BADGE PADA CARD ===== */
+        .card-tag {
+            display: inline-block;
+            background: #eef2f7;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #4a6cf7;
+            letter-spacing: 0.3px;
+            margin-bottom: 4px;
         }
 
         /* ===== SKILLS ===== */
@@ -310,18 +406,22 @@
         }
 
         .skills-list .skill {
-            background: #e8edf5;
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 0.9rem;
+            background: #eef2f7;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
             font-weight: 500;
-            color: #0f3460;
-            transition: background 0.3s;
+            color: #0f1b33;
+            transition: all 0.3s;
+            border: 1px solid transparent;
         }
 
         .skills-list .skill:hover {
-            background: #4a6cf7;
+            background: #4f7df3;
             color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(79, 125, 243, 0.3);
+            border-color: #4f7df3;
         }
 
         /* ===== RESOURCES ===== */
@@ -331,21 +431,44 @@
         }
 
         .resources-list li {
-            padding: 6px 0;
+            padding: 8px 0;
             border-bottom: 1px solid #eef2f7;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .resources-list li:last-child {
             border-bottom: none;
         }
 
+        .resources-list li::before {
+            content: '▹';
+            color: #e94560;
+            font-weight: 700;
+        }
+
+        /* ===== REFLECTION SECTION ===== */
+        #reflection p {
+            font-size: 1.02rem;
+            color: #2d3a4a;
+        }
+
+        #reflection .highlight-box {
+            background: linear-gradient(135deg, #f0f4ff, #faf0f3);
+            padding: 16px 20px;
+            border-radius: 12px;
+            border-left: 4px solid #4f7df3;
+            margin-top: 12px;
+        }
+
         /* ===== FOOTER ===== */
         footer {
-            background: #1a1a2e;
+            background: #0f1b33;
             color: #aab4c9;
             text-align: center;
-            padding: 24px;
-            border-radius: 0 0 16px 16px;
+            padding: 28px 20px;
+            border-radius: 0 0 20px 20px;
             font-size: 0.9rem;
         }
 
@@ -353,32 +476,77 @@
             color: #fff;
         }
 
+        footer a {
+            color: #aab4c9;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        footer .footer-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #4f7df3, #e94560);
+            margin: 12px auto;
+            border-radius: 10px;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .profile-grid {
                 grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-info .label {
+                width: auto;
             }
 
             .section {
-                padding: 20px 16px;
+                padding: 20px 18px;
             }
 
             nav {
-                gap: 4px 10px;
+                gap: 4px 8px;
                 padding: 10px 12px;
             }
 
             nav a {
-                font-size: 0.8rem;
-                padding: 4px 10px;
+                font-size: 0.75rem;
+                padding: 5px 10px;
             }
 
             .card-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .profile-avatar .avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 16px 30px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section h2 {
+                font-size: 1.3rem;
+            }
+
+            .card {
+                padding: 16px;
             }
         }
     </style>
@@ -401,7 +569,7 @@
         <header>
             <h1>📚 e-Portfolio</h1>
             <p class="subtitle">TK2323/TM2213 Mobile Programming</p>
-            <p class="subtitle">Nurul Izyani · A210813</p>
+            <p class="subtitle" style="font-weight:300; opacity:0.7;">Nurul Izyani · A210813</p>
             <span class="badge">🎯 SDG 1: No Poverty</span>
         </header>
 
@@ -416,15 +584,15 @@
                     <span class="sdg-badge">🎯 SDG 1</span>
                 </div>
                 <div class="profile-info">
-                    <p><span class="label">Name:</span> Nurul Izyani Binti Mohd Izyan</p>
-                    <p><span class="label">Matric No:</span> A210813</p>
-                    <p><span class="label">Programme:</span> Mobile Programming</p>
-                    <p><span class="label">Instructor:</span> Dr. Rimaniza</p>
-                    <p><span class="label">SDG:</span> SDG 1 — No Poverty</p>
-                    <p><span class="label">App Name:</span> JobQuest</p>
-                    <p style="margin-top:12px; font-style:italic; color:#4a6cf7;">
+                    <p><span class="label">Name</span> <span class="highlight">Nurul Izyani Binti Mohd Izyan</span></p>
+                    <p><span class="label">Matric No</span> <span class="highlight">A210813</span></p>
+                    <p><span class="label">Programme</span> <span class="highlight">Mobile Programming</span></p>
+                    <p><span class="label">Instructor</span> <span class="highlight">Dr. Rimaniza</span></p>
+                    <p><span class="label">SDG</span> <span class="highlight">SDG 1 — No Poverty</span></p>
+                    <p><span class="label">App Name</span> <span class="highlight">JobQuest</span></p>
+                    <div class="sdg-quote">
                         “End poverty in all its forms everywhere. By providing access to employment opportunities, the app helps individuals secure stable income and break the cycle of poverty.”
-                    </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -436,12 +604,9 @@
 
                 <!-- ===== LAB 1 ===== -->
                 <div class="card">
-                    <h3>📐 Lab 1: UI</h3>
+                    <span class="card-tag">📐 Lab 1</span>
+                    <h3>UI</h3>
                     <div class="meta">Jetpack Compose · Basic UI</div>
-                    <!-- ============================================================ -->
-                    <!-- 📸 RUANG UNTUK GAMBAR LAB 1:                                 -->
-                    <!-- Gantikan 'lab1.png' dengan nama fail gambar anda.            -->
-                    <!-- ============================================================ -->
                     <img src="lab1.png" alt="Lab 1 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/vrXNpH4lpjY" allowfullscreen></iframe>
@@ -456,12 +621,9 @@
 
                 <!-- ===== LAB 2 ===== -->
                 <div class="card">
-                    <h3>🖱️ Lab 2: Interaction</h3>
+                    <span class="card-tag">🖱️ Lab 2</span>
+                    <h3>Interaction</h3>
                     <div class="meta">State Management · Click Events</div>
-                    <!-- ============================================================ -->
-                    <!-- 📸 RUANG UNTUK GAMBAR LAB 2:                                 -->
-                    <!-- Gantikan 'lab2.png' dengan nama fail gambar anda.            -->
-                    <!-- ============================================================ -->
                     <img src="lab2.png" alt="Lab 2 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/fhiKd4dL8-M" allowfullscreen></iframe>
@@ -476,12 +638,9 @@
 
                 <!-- ===== LAB 3 ===== -->
                 <div class="card">
-                    <h3>🎨 Lab 3: Material Design</h3>
+                    <span class="card-tag">🎨 Lab 3</span>
+                    <h3>Material Design</h3>
                     <div class="meta">Material 3 · Theming · Components</div>
-                    <!-- ============================================================ -->
-                    <!-- 📸 RUANG UNTUK GAMBAR LAB 3:                                 -->
-                    <!-- Gantikan 'lab3.png' dengan nama fail gambar anda.            -->
-                    <!-- ============================================================ -->
                     <img src="lab3.png" alt="Lab 3 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/YrZmXZqN9ec" allowfullscreen></iframe>
@@ -496,12 +655,9 @@
 
                 <!-- ===== LAB 4 ===== -->
                 <div class="card">
-                    <h3>🧭 Lab 4: Navigation</h3>
+                    <span class="card-tag">🧭 Lab 4</span>
+                    <h3>Navigation</h3>
                     <div class="meta">Jetpack Navigation · Multi-screen</div>
-                    <!-- ============================================================ -->
-                    <!-- 📸 RUANG UNTUK GAMBAR LAB 4:                                 -->
-                    <!-- Gantikan 'lab4.png' dengan nama fail gambar anda.            -->
-                    <!-- ============================================================ -->
                     <img src="lab4.png" alt="Lab 4 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/W3ti84qQkZM" allowfullscreen></iframe>
@@ -516,12 +672,9 @@
 
                 <!-- ===== LAB 5 ===== -->
                 <div class="card">
-                    <h3>💾 Lab 5: Room Database</h3>
+                    <span class="card-tag">💾 Lab 5</span>
+                    <h3>Room Database</h3>
                     <div class="meta">Room · Local Persistence</div>
-                    <!-- ============================================================ -->
-                    <!-- 📸 RUANG UNTUK GAMBAR LAB 5:                                 -->
-                    <!-- Gantikan 'lab5.png' dengan nama fail gambar anda.            -->
-                    <!-- ============================================================ -->
                     <img src="lab5.png" alt="Lab 5 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/lWnAd2mFZ90" allowfullscreen></iframe>
@@ -544,15 +697,12 @@
 
                 <!-- ===== PROJECT 1 ===== -->
                 <div class="card" style="border-left-color: #e94560;">
-                    <h3>📱 Project 1: JobQuest</h3>
+                    <span class="card-tag" style="background:#e94560; color:#fff;">⭐ Project 1</span>
+                    <h3>JobQuest</h3>
                     <div class="meta">5 Screens · ViewModel · Navigation</div>
                     <div class="problem-statement">
-                        <strong>Problem Statement:</strong> Job seekers struggle to find and apply for jobs efficiently. This app provides a simple platform to browse and apply for job opportunities.
+                        <strong>Problem:</strong> Job seekers struggle to find and apply for jobs efficiently. This app provides a simple platform to browse and apply for job opportunities.
                     </div>
-                    <!-- ============================================================ -->
-                    <!-- 📸 RUANG UNTUK GAMBAR PROJECT 1:                             -->
-                    <!-- Gantikan 'project1.png' dengan nama fail gambar anda.        -->
-                    <!-- ============================================================ -->
                     <img src="project1.png" alt="Project 1 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/V3Hr41Rf6zI" allowfullscreen></iframe>
@@ -567,16 +717,13 @@
                 </div>
 
                 <!-- ===== PROJECT 2 ===== -->
-                <div class="card" style="border-left-color: #0f3460;">
-                    <h3>🚀 Project 2: JobQuest (Advanced)</h3>
+                <div class="card" style="border-left-color: #4f7df3;">
+                    <span class="card-tag" style="background:#4f7df3; color:#fff;">🚀 Project 2</span>
+                    <h3>JobQuest (Advanced)</h3>
                     <div class="meta">9 Screens · API · Firebase · Room · GPS</div>
                     <div class="problem-statement">
-                        <strong>Problem Statement:</strong> Job seekers need advanced tools like GPS-based job search, cloud storage for applications, and real-time chat with employers.
+                        <strong>Problem:</strong> Job seekers need advanced tools like GPS-based job search, cloud storage for applications, and real-time chat with employers.
                     </div>
-                    <!-- ============================================================ -->
-                    <!-- 📸 RUANG UNTUK GAMBAR PROJECT 2:                             -->
-                    <!-- Gantikan 'project2.png' dengan nama fail gambar anda.        -->
-                    <!-- ============================================================ -->
                     <img src="project2.png" alt="Project 2 Screenshot" class="screenshot-img" />
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/YJrgvtq2teo" allowfullscreen></iframe>
@@ -599,9 +746,9 @@
             <p>
                 Starting from Lab 1, I built a strong foundation in Jetpack Compose. Lab 2 taught me state management, Lab 3 introduced Material Design, Lab 4 focused on navigation, and Lab 5 covered Room Database. Project 1 brought everything together into a multi-screen app, while Project 2 expanded my skills with Firebase, Retrofit, GPS, and real-time chat features.
             </p>
-            <p style="margin-top:12px;">
-                JobQuest supports <strong>SDG 1: No Poverty</strong> by providing a platform for job seekers to find employment opportunities. By helping individuals secure stable income, the app contributes to breaking the cycle of poverty.
-            </p>
+            <div class="highlight-box">
+                <strong>🌍 SDG Impact:</strong> JobQuest supports <strong>SDG 1: No Poverty</strong> by providing a platform for job seekers to find employment opportunities. By helping individuals secure stable income, the app contributes to breaking the cycle of poverty.
+            </div>
         </section>
 
         <!-- ===== SKILLS ===== -->
@@ -621,7 +768,7 @@
                 <span class="skill">Navigation Compose</span>
                 <span class="skill">Material 3</span>
                 <span class="skill">Git/GitHub</span>
-                <span class="skill">Coil (Image Loading)</span>
+                <span class="skill">Coil</span>
             </div>
         </section>
 
@@ -636,7 +783,7 @@
                 <li><strong>Apify API:</strong> <a href="https://apify.com/" target="_blank">Apify Platform</a></li>
                 <li><strong>JobStreet:</strong> <a href="https://www.jobstreet.com.my/" target="_blank">JobStreet Malaysia</a></li>
                 <li><strong>Coil:</strong> <a href="https://coil-kt.github.io/coil/" target="_blank">Coil Image Loading</a></li>
-                <li style="margin-top:8px; padding-top:8px; border-top:1px solid #eef2f7;">
+                <li style="margin-top:10px; padding-top:12px; border-top:2px solid #eef2f7;">
                     <strong>🤖 AI Assistance:</strong> Used ChatGPT/Gemini for code debugging, refactoring, and understanding complex topics like Firebase, Retrofit, and Room.
                 </li>
             </ul>
@@ -644,14 +791,15 @@
 
         <!-- ===== FOOTER ===== -->
         <footer>
+            <div class="footer-divider"></div>
             <p>
-                <strong>Nurul Izyani</strong> · A210813 · Mobile Programming (TK2323/TM2213)
+                <strong>Nurul Izyani Binti Mohd Izyan</strong> · A210813 · Mobile Programming (TK2323/TM2213)
             </p>
-            <p style="margin-top:4px;">
-                📧 <a href="mailto:izyani@example.com" style="color:#aab4c9;">izyani@example.com</a> &nbsp;|&nbsp;
-                🔗 <a href="https://github.com/a210813" target="_blank" style="color:#aab4c9;">github.com/a210813</a>
+            <p style="margin-top:6px;">
+                📧 <a href="mailto:izyani@example.com">izyani@example.com</a> &nbsp;·&nbsp;
+                🔗 <a href="https://github.com/a210813" target="_blank">github.com/a210813</a>
             </p>
-            <p style="margin-top:6px; font-size:0.8rem; opacity:0.7;">
+            <p style="margin-top:8px; font-size:0.8rem; opacity:0.6;">
                 © 2026 · Built with ❤️ for Project 2 · Hosted on GitHub Pages
             </p>
         </footer>
