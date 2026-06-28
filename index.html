@@ -315,14 +315,42 @@
             background: #ffffff;
         }
 
+        /* ===== CARD TAG - DIBESARKAN ===== */
+        .card-tag {
+            display: inline-block;
+            background: #eef2f7;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #4a6cf7;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .card-tag-lab {
+            background: #4f7df3;
+            color: #fff;
+        }
+
+        .card-tag-project1 {
+            background: #e94560;
+            color: #fff;
+        }
+
+        .card-tag-project2 {
+            background: #0f1b33;
+            color: #fff;
+        }
+
         .card h3 {
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             color: #0f1b33;
             margin-bottom: 2px;
         }
 
         .card .meta {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: #7a8aa0;
             margin-bottom: 8px;
             font-weight: 500;
@@ -383,19 +411,6 @@
 
         .card .reflection strong {
             color: #0f1b33;
-        }
-
-        /* ===== TAG / BADGE PADA CARD ===== */
-        .card-tag {
-            display: inline-block;
-            background: #eef2f7;
-            padding: 2px 12px;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #4a6cf7;
-            letter-spacing: 0.3px;
-            margin-bottom: 4px;
         }
 
         /* ===== SKILLS ===== */
@@ -530,6 +545,11 @@
                 height: 120px;
                 font-size: 3rem;
             }
+
+            .card-tag {
+                font-size: 0.75rem;
+                padding: 4px 12px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -547,6 +567,11 @@
 
             .card {
                 padding: 16px;
+            }
+
+            .card-tag {
+                font-size: 0.7rem;
+                padding: 4px 10px;
             }
         }
     </style>
@@ -604,8 +629,8 @@
 
                 <!-- ===== LAB 1 ===== -->
                 <div class="card">
-                    <span class="card-tag">📐 Lab 1</span>
-                    <h3>UI</h3>
+                    <span class="card-tag card-tag-lab">📐 LAB 1: UI</span>
+                    <h3>User Interface</h3>
                     <div class="meta">Jetpack Compose · Basic UI</div>
                     <img src="lab1.png" alt="Lab 1 Screenshot" class="screenshot-img" />
                     <div class="video-container">
@@ -621,8 +646,8 @@
 
                 <!-- ===== LAB 2 ===== -->
                 <div class="card">
-                    <span class="card-tag">🖱️ Lab 2</span>
-                    <h3>Interaction</h3>
+                    <span class="card-tag card-tag-lab">🖱️ LAB 2: Interaction</span>
+                    <h3>User Interaction</h3>
                     <div class="meta">State Management · Click Events</div>
                     <img src="lab2.png" alt="Lab 2 Screenshot" class="screenshot-img" />
                     <div class="video-container">
@@ -638,8 +663,8 @@
 
                 <!-- ===== LAB 3 ===== -->
                 <div class="card">
-                    <span class="card-tag">🎨 Lab 3</span>
-                    <h3>Material Design</h3>
+                    <span class="card-tag card-tag-lab">🎨 LAB 3: Material Design</span>
+                    <h3>Material Design 3</h3>
                     <div class="meta">Material 3 · Theming · Components</div>
                     <img src="lab3.png" alt="Lab 3 Screenshot" class="screenshot-img" />
                     <div class="video-container">
@@ -655,8 +680,8 @@
 
                 <!-- ===== LAB 4 ===== -->
                 <div class="card">
-                    <span class="card-tag">🧭 Lab 4</span>
-                    <h3>Navigation</h3>
+                    <span class="card-tag card-tag-lab">🧭 LAB 4: Navigation</span>
+                    <h3>Jetpack Navigation</h3>
                     <div class="meta">Jetpack Navigation · Multi-screen</div>
                     <img src="lab4.png" alt="Lab 4 Screenshot" class="screenshot-img" />
                     <div class="video-container">
@@ -672,7 +697,7 @@
 
                 <!-- ===== LAB 5 ===== -->
                 <div class="card">
-                    <span class="card-tag">💾 Lab 5</span>
+                    <span class="card-tag card-tag-lab">💾 LAB 5: Room Database</span>
                     <h3>Room Database</h3>
                     <div class="meta">Room · Local Persistence</div>
                     <img src="lab5.png" alt="Lab 5 Screenshot" class="screenshot-img" />
@@ -697,7 +722,7 @@
 
                 <!-- ===== PROJECT 1 ===== -->
                 <div class="card" style="border-left-color: #e94560;">
-                    <span class="card-tag" style="background:#e94560; color:#fff;">⭐ Project 1</span>
+                    <span class="card-tag card-tag-project1">⭐ PROJECT 1</span>
                     <h3>JobQuest</h3>
                     <div class="meta">5 Screens · ViewModel · Navigation</div>
                     <div class="problem-statement">
@@ -718,7 +743,7 @@
 
                 <!-- ===== PROJECT 2 ===== -->
                 <div class="card" style="border-left-color: #4f7df3;">
-                    <span class="card-tag" style="background:#4f7df3; color:#fff;">🚀 Project 2</span>
+                    <span class="card-tag card-tag-project2">🚀 PROJECT 2</span>
                     <h3>JobQuest (Advanced)</h3>
                     <div class="meta">9 Screens · API · Firebase · Room · GPS</div>
                     <div class="problem-statement">
